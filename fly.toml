@@ -1,14 +1,25 @@
-app = "j1-studio-bot11"
-primary_region = "sin"
+# fly.toml app configuration file generated for j1-studio-bot-2025 on 2026-10-13T22:24:05Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'j1-studio-bot-2025'
+primary_region = 'ams'
 
 [build]
 
 [env]
-  PORT = "8080"
+  PORT = '8080'
 
 [http_service]
   internal_port = 8080
   force_https = true
-  auto_stop_machines = "off"
+  auto_stop_machines = 'off'
   auto_start_machines = true
   min_machines_running = 1
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
+  memory_mb = 256
